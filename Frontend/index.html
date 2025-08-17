@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MealMate - AI Chatbot for Food Delivery</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-utensils"></i>
+                <span>MealMate</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Welcome to <span class="brand">MealMate</span></h1>
+                <p class="hero-subtitle">AI-Powered Food Delivery Experience</p>
+                <p class="hero-description">Discover authentic Bangladeshi cuisine delivered fresh to your doorstep. Our AI chatbot makes ordering easier than ever!</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="openChatbot()">
+                        <i class="fas fa-robot"></i> Order with AI
+                    </button>
+                    <button class="btn btn-secondary" onclick="document.getElementById('menu').scrollIntoView()">
+                        <i class="fas fa-utensils"></i> View Menu
+                    </button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="food-card floating">
+                    <i class="fas fa-bowl-rice"></i>
+                    <span>Fresh & Hot</span>
+                </div>
+            </div>
+        </div>
+        <div class="spice-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>AI-Powered Ordering</h3>
+                    <p>Chat with our intelligent bot for personalized recommendations</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Quick Delivery</h3>
+                    <p>Fast and reliable delivery straight to your door</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-pepper-hot"></i>
+                    <h3>Authentic Flavors</h3>
+                    <p>Traditional Bangladeshi dishes made with love</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our <span class="highlight">Delicious</span> Menu</h2>
+                <p>Authentic Bangladeshi cuisine crafted with traditional recipes</p>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item" data-item="kacchi">
+                    <div class="menu-image">
+                        <i class="fas fa-bowl-rice"></i>
+                    </div>
+                    <div class="menu-info">
+                        <h3>Kacchi</h3>
+                        <p>Traditional mutton biryani cooked in layers</p>
+                        <span class="price">৳250</span>
+                        <button class="order-btn" onclick="orderItem('Kacchi')">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-item="tehari">
+                    <div class="menu-image">
+                        <i class="fas fa-drumstick-bite"></i>
+                    </div>
+                    <div class="menu-info">
+                        <h3>Tehari</h3>
+                        <p>Spicy beef and rice delicacy from Old Dhaka</p>
+                        <span class="price">৳200</span>
+                        <button class="order-btn" onclick="orderItem('Tehari')">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-item="morog-polao">
+                    <div class="menu-image">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="menu-info">
+                        <h3>Morog Polao</h3>
+                        <p>Aromatic chicken pilaf with ghee and spices</p>
+                        <span class="price">৳320</span>
+                        <button class="order-btn" onclick="orderItem('Morog Polao')">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-item="nehari">
+                    <div class="menu-image">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <div class="menu-info">
+                        <h3>Nehari</h3>
+                        <p>Slow-cooked spicy beef stew with naan</p>
+                        <span class="price">৳300</span>
+                        <button class="order-btn" onclick="orderItem('Nehari')">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-item="beef-rezala">
+                    <div class="menu-image">
+                        <i class="fas fa-pepper-hot"></i>
+                    </div>
+                    <div class="menu-info">
+                        <h3>Beef Rezala</h3>
+                        <p>Creamy beef curry with yogurt and spices</p>
+                        <span class="price">৳230</span>
+                        <button class="order-btn" onclick="orderItem('Beef Rezala')">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-item="chicken-roast">
+                    <div class="menu-image">
+                        <i class="fas fa-drumstick-bite"></i>
+                    </div>
+                    <div class="menu-info">
+                        <h3>Chicken Roast</h3>
+                        <p>Perfectly roasted chicken with Bengali spices</p>
+                        <span class="price">৳150</span>
+                        <button class="order-btn" onclick="orderItem('Chicken Roast')">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-item="beef-kala-bhuna">
+                    <div class="menu-image">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <div class="menu-info">
+                        <h3>Beef Kala Bhuna</h3>
+                        <p>Dark roasted beef curry from Chittagong</p>
+                        <span class="price">৳300</span>
+                        <button class="order-btn" onclick="orderItem('Beef Kala Bhuna')">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-item="chicken-dum-biryani">
+                    <div class="menu-image">
+                        <i class="fas fa-bowl-rice"></i>
+                    </div>
+                    <div class="menu-info">
+                        <h3>Chicken Dum Biryani</h3>
+                        <p>Slow-cooked chicken biryani with fragrant rice</p>
+                        <span class="price">৳200</span>
+                        <button class="order-btn" onclick="orderItem('Chicken Dum Biryani')">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-item="chicken-chaap">
+                    <div class="menu-image">
+                        <i class="fas fa-drumstick-bite"></i>
+                    </div>
+                    <div class="menu-info">
+                        <h3>Chicken Chaap</h3>
+                        <p>Rich and creamy Mughlai chicken curry</p>
+                        <span class="price">৳180</span>
+                        <button class="order-btn" onclick="orderItem('Chicken Chaap')">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-item="mutton-curry">
+                    <div class="menu-image">
+                        <i class="fas fa-pepper-hot"></i>
+                    </div>
+                    <div class="menu-info">
+                        <h3>Mutton Curry</h3>
+                        <p>Traditional Bengali mutton curry with vegetables</p>
+                        <span class="price">৳250</span>
+                        <button class="order-btn" onclick="orderItem('Mutton Curry')">Order Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About <span class="highlight">MealMate</span></h2>
+                    <p>MealMate revolutionizes food delivery with AI-powered ordering and authentic Bangladeshi cuisine. Our intelligent chatbot understands your preferences and helps you discover new flavors.</p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Fresh ingredients daily</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Traditional recipes</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>AI-powered recommendations</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Fast delivery</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="chef-icon">
+                        <i class="fas fa-user-chef"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get in <span class="highlight">Touch</span></h2>
+                <p>Have questions? Our AI chatbot is here to help!</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Call Us</h4>
+                            <p>+880 1700-000000</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email Us</h4>
+                            <p>hello@mealmate.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Find Us</h4>
+                            <p>Dhaka, Bangladesh</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="chatbot-demo">
+                    <button class="btn btn-primary large" onclick="openChatbot()">
+                        <i class="fas fa-robot"></i>
+                        Chat with MealMate AI
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <i class="fas fa-utensils"></i>
+                        <span>MealMate</span>
+                    </div>
+                    <p>AI-Powered Food Delivery Experience</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MealMate. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Chatbot Button -->
+    <div class="floating-chat" onclick="openChatbot()">
+        <i class="fas fa-robot"></i>
+        <span class="chat-tooltip">Chat with AI</span>
+    </div>
+
+    <!-- Dialogflow Chatbot -->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger
+        intent="WELCOME"
+        chat-title="MealMate: AI Chatbot for Food Delivery"
+        agent-id="620011d3-66b1-4fbf-8851-ae52a1c83ece"
+        language-code="en"
+        chat-icon="https://cdn-icons-png.flaticon.com/512/4712/4712027.png"
+    ></df-messenger>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Menu item animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(20px)';
+            item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(item);
+        });
+
+        // Dialogflow chatbot integration
+        function openChatbot() {
+            // Open the Dialogflow messenger
+            const dfMessenger = document.querySelector('df-messenger');
+            if (dfMessenger) {
+                dfMessenger.renderCustomText('Hello! I\'m here to help you order delicious food. What would you like today?');
+                dfMessenger.openOrClose();
+            }
+        }
+
+        function orderItem(itemName) {
+            // Send order to chatbot and open it
+            const dfMessenger = document.querySelector('df-messenger');
+            if (dfMessenger) {
+                dfMessenger.renderCustomText(`I'd like to order ${itemName}`);
+                dfMessenger.openOrClose();
+            }
+            console.log(`Ordering ${itemName} through chatbot...`);
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Floating particles animation
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'floating-particle';
+            particle.innerHTML = '🌶️';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            document.body.appendChild(particle);
+
+            setTimeout(() => {
+                particle.remove();
+            }, 5000);
+        }
+
+        setInterval(createParticle, 3000);
+
+        // Customize Dialogflow messenger appearance
+        window.addEventListener('dfMessengerLoaded', function () {
+            const messenger = document.querySelector('df-messenger');
+            
+            // Wait for the messenger to be fully loaded
+            messenger.addEventListener('df-messenger-loaded', function () {
+                // Apply custom styling to match the website theme
+                const messengerElement = messenger.shadowRoot.querySelector('.df-messenger-wrapper');
+                if (messengerElement) {
+                    messengerElement.style.setProperty('--df-messenger-primary-color', '#ff6b35');
+                    messengerElement.style.setProperty('--df-messenger-titlebar-background-color', '#ff6b35');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
